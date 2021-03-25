@@ -26,7 +26,7 @@ After installing UdonSharp and Keypad: drag the Keypad prefab into your world, c
 
 The main focus is "Door Object" (marked in green) which accepts any GameObject and will toggle active status depending on passcode status, and "Solution" (marked in yellow) which accepts any numeric passcode up to 8 numbers long.
 
-Allow List means the usernames on that list will always be allowed no matter what code they press or no code at all. Deny List means those users will never be allowed, even if they type the correct code.
+"Allow List" means the usernames on that list will always be allowed no matter what code they press or no code at all. "Deny List" means those users will never be allowed, even if they type the correct code.
 
 ## **🖌️ Customisation!**
 
