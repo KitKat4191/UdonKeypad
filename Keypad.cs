@@ -3,6 +3,8 @@ using UdonSharp;
 using UnityEngine;
 using VRC.Udon;
 using UnityEngine.UI;
+using VRC.SDKBase;
+
 // ReSharper disable MemberCanBeMadeStatic.Local
 
 // ReSharper disable once CheckNamespace
@@ -10,10 +12,13 @@ public class Keypad : UdonSharpBehaviour
 {
 
     private readonly string AUTHOR = "Foorack";
-    private readonly string VERSION = "3.1";
+    private readonly string VERSION = "3.2";
     
     public string solution = "2580";
     public GameObject doorObject = null;
+
+    public string[] allowList = new string[0];
+    public string[] denyList = new string[0];
 
     // ReSharper disable once InconsistentNaming
     public string translationPasscode = "PASSCODE";
@@ -96,6 +101,28 @@ public class Keypad : UdonSharpBehaviour
             Die();
         }
 
+        if (allowList == null)
+        {
+            LogError("Allow list was null, setting to empty list...");
+            allowList = new string[0];
+        }
+        if (denyList == null)
+        {
+            LogError("Deny list was null, setting to empty list...");
+            denyList = new string[0];
+        }
+        
+        if (allowList.Length > 9999)
+        {
+            LogError("Allow list was larger than 9999, this is most likely unintentional, resetting to 0.");
+            allowList = new string[0];
+        }
+        if (denyList.Length > 9999)
+        {
+            LogError("Allow list was larger than 9999, this is most likely unintentional, resetting to 0.");
+            denyList = new string[0];
+        }
+
         internalKeypadDisplay.text = translationPasscode;
 
         Log("Keypad started!");
@@ -122,9 +149,29 @@ public class Keypad : UdonSharpBehaviour
     // ReSharper disable once InconsistentNaming
     private void OK()
     {
-        if (_buffer == solution)
+        bool isOnAllow = false;
+        bool isOnDeny = false;
+        string username = Networking.LocalPlayer == null ? "UnityEditor" : Networking.LocalPlayer.displayName;
+        // Check if user is on allow list
+        foreach (string entry in allowList)
         {
-            Log("Passcode GRANTED!");
+            if (entry == username)
+            {
+                isOnAllow = true;
+            }
+        }
+        // Check if user is on deny list
+        foreach (string entry in denyList)
+        {
+            if (entry == username)
+            {
+                isOnDeny = true;
+            }
+        }
+        // Check if pass is correct and not on deny, or if is on allow list.
+        if ((_buffer == solution && !isOnDeny) || isOnAllow)
+        {
+            Log(isOnAllow ? "GRANTED through allow list!" : "Passcode GRANTED!");
             _buffer = "";
             internalKeypadDisplay.text = translationGranted;
             
@@ -140,6 +187,7 @@ public class Keypad : UdonSharpBehaviour
         }
         else
         {
+            // Do not announce to user that they are on deny list.
             Log("Passcode DENIED!");
             _buffer = "";
             internalKeypadDisplay.text = translationDenied;

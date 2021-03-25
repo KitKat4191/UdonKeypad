@@ -26,6 +26,8 @@ After installing UdonSharp and Keypad: drag the Keypad prefab into your world, c
 
 The main focus is "Door Object" (marked in green) which accepts any GameObject and will toggle active status depending on passcode status, and "Solution" (marked in yellow) which accepts any numeric passcode up to 8 numbers long.
 
+Allow List means the usernames on that list will always be allowed no matter what code they press or no code at all. Deny List means those users will never be allowed, even if they type the correct code.
+
 ## **🖌️ Customisation!**
 
 The new version of Keypad supports many customization features. For example translating the Keypad into your own language, by changing the status texts. You can also make the door show the door instead of hiding the door by de-selecting the "Hide Door On Granted" checkbox. 

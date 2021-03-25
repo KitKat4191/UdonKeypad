@@ -5,6 +5,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 // ReSharper disable MemberCanBeMadeStatic.Local
 
+// ReSharper disable once CheckNamespace
 public class KeypadButton : UdonSharpBehaviour
 {
 
