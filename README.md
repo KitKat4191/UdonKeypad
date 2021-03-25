@@ -2,7 +2,7 @@
 
 ![VRChat Udon Keypad/Passcode](https://blog.foorack.com/content/images/2020/01/keypad2.PNG)
 
-[![Discord](https://img.shields.io/badge/Discord-Discord%20Support-blueviolet?logo=discord)](https://discord.gg/7xJdWNk) - Feel free to join if you have any bugs or questions!
+[![Discord](https://img.shields.io/badge/Discord-Foo's%20Udon%20Laboratory-blueviolet?logo=discord)](https://discord.gg/7xJdWNk) - Feel free to join if you have any bugs or questions!
 
 This is a drag-and-drop Keypad/Passcode Prefab for VRChat worlds made in Unity 2018.4.20 and **SDK3** with Udon. This prefab requires no coding from your part and is very easy to setup. Password and target door are both easily configurable, with optional support for custom activation scripts if wanting more advanced activations.
 
@@ -50,4 +50,4 @@ There are 3 possible programs which are run at different stages: at success, at 
 
 You are free to use this prefab without having to credit me. But if you do use it, I would love it if you sent a quick screenshot. It really gives motivation to continuously update and improve this, as well as continue making other stuff public. Thank you!
 
-(Optionally, if there is demand I can create a version without code and which only accepts people if their username is on a whitelist. This would prevent people from spreading the code. Tweet me or ping me on Discord if there is any interest for this.)
+[![Discord](https://img.shields.io/badge/Discord-Foo's%20Udon%20Laboratory-blueviolet?logo=discord)](https://discord.gg/7xJdWNk)
