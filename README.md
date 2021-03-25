@@ -12,9 +12,9 @@ This is a drag-and-drop Keypad/Passcode Prefab for VRChat worlds made in Unity 2
 
 After installing UdonSharp and Keypad: drag the Keypad prefab into your world, click on it, and click "Compile All From Sources". If you have any problems at all, please contact me on Discord, [**Foorack#0001**](https://discordapp.com/users/92875770338213888). I would love to help with any problems!
 
-[Download UdonSharp API](https://github.com/MerlinVR/UdonSharp/releases/download/v0.19.2/UdonSharp_v0.19.2.unitypackage), install and forget.
+[Download UdonSharp API](https://github.com/MerlinVR/UdonSharp/releases/), install and forget.
 
-[Download UdonKeypad v.2020.06.30.20.07](https://storage.foorack.com/download.php?id=16&token=Jr74nfJsKqF7gbZq0ZEXtO0xbUsmUbvt) (Latest!)
+[Download UdonKeypad v.2021.03.25.15.20](https://storage.foorack.com/download.php?id=18&token=78lSyOXFYMZdXfKKEvdpWgzFlkWJDTYA) (Latest!)
 
 ## **✨ Setup Tutorial**
 
