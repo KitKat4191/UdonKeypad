@@ -14,7 +14,7 @@ After installing UdonSharp and Keypad: drag the Keypad prefab into your world, c
 
 [Download UdonSharp API](https://github.com/MerlinVR/UdonSharp/releases/), install and forget.
 
-[Download UdonKeypad v.2021.03.25.15.20](https://storage.foorack.com/download.php?id=18&token=78lSyOXFYMZdXfKKEvdpWgzFlkWJDTYA) (Latest!)
+[Download UdonKeypad v.2021.04.19.23.20](https://storage.foorack.com/download.php?id=19&token=4ZzFIpmqUyhyAQuWIysyTJtN67MSSnnN) (Latest!)
 
 ## **✨ Setup Tutorial**
 
@@ -22,11 +22,15 @@ After installing UdonSharp and Keypad: drag the Keypad prefab into your world, c
 
 **Settings:** Look at the settings provided on the **main Keypad object:**
 
-![Settings available in the Keypad prefab](https://blog.foorack.com/content/images/2020/06/bild-2.png "Settings available in the Keypad prefab")
+![Settings available in the Keypad prefab](https://blog.foorack.com/content/images/2021/04/bild.png "Settings available in the Keypad prefab")
 
 The main focus is "Door Object" (marked in green) which accepts any GameObject and will toggle active status depending on passcode status, and "Solution" (marked in yellow) which accepts any numeric passcode up to 8 numbers long.
 
 "Allow List" means the usernames on that list will always be allowed no matter what code they press or no code at all. "Deny List" means those users will never be allowed, even if they type the correct code.
+
+"Additional Solutions" are additional codes that will also be accepted, and will unlock all doors. "Additional Door Objects" is a way to provide if you have more than 1 door object, and you want to open them all at the same time.
+
+"Key Separation" is a special mode which requires you to have the same amount of solutions as doors. When enabled it pairs each solution to its own unique door. This means solution 1 will open only door 1, solutions 2 will open only door 2, etc...
 
 ## **🖌️ Customisation!**
 
