@@ -8,13 +8,13 @@ This is a drag-and-drop Keypad/Passcode Prefab for VRChat worlds made in Unity 2
 
 ## **📥 Download:**
 
-**Note:** In the latest release the Keypad has been rewritten into UdonSharp. Don't worry! You don't have to touch UdonSharp code I promise! Simply install UdonSharp first and forget about it. (Graph version still exists if you want to use that instead).
+**Note:** In the latest release the Keypad has been rewritten into UdonSharp. Don't worry! You don't have to touch UdonSharp code I promise! Simply install UdonSharp first and forget about it.
 
-After installing UdonSharp and Keypad: drag the Keypad prefab into your world, click on it, and click "Compile All From Sources". If you have any problems at all, please contact me on Discord, [**Foorack#0001**](https://discordapp.com/users/92875770338213888). I would love to help with any problems!
+After installing UdonSharp and Keypad: drag the Keypad prefab into your world, click on it, and click "Compile All From Sources". If you have any problems at all, please [**contact on Discord**](https://discord.gg/7xJdWNk). I would love to help with any Keypad-related problems!
 
 [Download UdonSharp API](https://github.com/MerlinVR/UdonSharp/releases/), install and forget.
 
-[Download UdonKeypad v.2021.04.19.23.20](https://storage.foorack.com/download.php?id=19&token=4ZzFIpmqUyhyAQuWIysyTJtN67MSSnnN) (Latest!)
+[Download UdonKeypad v.2021.07.14.21.35](https://storage.foorack.com/download.php?id=20&token=7MDkMNRcn5bapiKabuU90lDOK9SVDrYB) (Latest!)
 
 ## **✨ Setup Tutorial**
 
@@ -42,7 +42,7 @@ You can disable debugging if you know what you are doing. This will make it less
 
 This is optional, and only recommended for people who are interested in doing Udon programming. You should at least have watched Tupper's tutorial on cube-rotation before attempting this!
 
-There are 3 possible programs which are run at different stages: at success, at failure, and at reset. Each program calls a custom event.
+There are 3 possible programs which are run at different stages: at success, at failure, and at reset. Each program calls a custom event. An optional variable `keypadCode` will be set with the entered code on the target program.
 
 | Setting name   | Event name      | Description                |
 | -------------- |:---------------:| -------------------------- |

@@ -12,7 +12,7 @@ public class Keypad : UdonSharpBehaviour
 {
 
     private readonly string AUTHOR = "Foorack";
-    private readonly string VERSION = "3.3";
+    private readonly string VERSION = "3.4";
 
     public string solution = "2580";
     public GameObject doorObject = null;
@@ -188,7 +188,6 @@ public class Keypad : UdonSharpBehaviour
     private void CLR()
     {
         Log("Passcode CLEAR!");
-        _buffer = "";
         internalKeypadDisplay.text = translationPasscode;
         
         foreach (var door in _doors) {
@@ -200,8 +199,11 @@ public class Keypad : UdonSharpBehaviour
 
         if (programDenied != null)
         {
+            programClosed.SetProgramVariable("keypadCode", _buffer);
             programClosed.SendCustomEvent("keypadClosed");
         }
+
+        _buffer = "";
     }
 
     // ReSharper disable once InconsistentNaming
@@ -242,7 +244,6 @@ public class Keypad : UdonSharpBehaviour
         if ((isCorrect && !isOnDeny) || isOnAllow)
         {
             Log(isOnAllow ? "GRANTED through allow list!" : "Passcode GRANTED!");
-            _buffer = "";
             internalKeypadDisplay.text = translationGranted;
             
             foreach (var door in _doors)
@@ -272,14 +273,16 @@ public class Keypad : UdonSharpBehaviour
             
             if (programGranted != null)
             {
+                programGranted.SetProgramVariable("keypadCode", _buffer);
                 programGranted.SendCustomEvent("keypadGranted");
             }
+
+            _buffer = "";
         }
         else
         {
             // Do not announce to user that they are on deny list.
             Log("Passcode DENIED!");
-            _buffer = "";
             internalKeypadDisplay.text = translationDenied;
 
             foreach (var door in _doors)
@@ -295,8 +298,11 @@ public class Keypad : UdonSharpBehaviour
             
             if (programDenied != null)
             {
+                programDenied.SetProgramVariable("keypadCode", _buffer);
                 programDenied.SendCustomEvent("keypadDenied");
             }
+
+            _buffer = "";
         }
     }
 
