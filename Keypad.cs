@@ -12,7 +12,7 @@ public class Keypad : UdonSharpBehaviour
 {
 
     private readonly string AUTHOR = "Foorack";
-    private readonly string VERSION = "3.4";
+    private readonly string VERSION = "3.5";
 
     public string solution = "2580";
     public GameObject doorObject = null;
@@ -62,6 +62,13 @@ public class Keypad : UdonSharpBehaviour
             Debug.Log(_prefix + value);
         }
     }
+    private void LogWarning(string value)
+    {
+        if (disableDebugging != true)
+        {
+            Debug.LogWarning(_prefix + value);
+        }
+    }
     private void LogError(string value)
     {
         if (disableDebugging != true)
@@ -102,7 +109,7 @@ public class Keypad : UdonSharpBehaviour
 
         if (doorObject == null)
         {
-            LogError("Door object was null! Resetting to default value!");
+            LogWarning("Door object was null! Resetting to default value!");
             doorObject = gameObject;
         }
 
