@@ -22,8 +22,7 @@ ___
 
 ## **✨ Setup Tutorial**
 
-**In Unity:** Drag the Keypad prefab into your world, click on it, and click `"Compile All From Sources"`.
-If you have any problems, please feel free to reach out on [Discord](https://discord.gg/7xJdWNk)! I would love to help with any _Keypad-related_ problems!
+**In Unity:** Drag the Keypad prefab into your world.
 
 **Settings:** Look at the settings provided on the **main Keypad object:**
 
@@ -36,6 +35,8 @@ The main focus is "Door Object" (marked in green) which accepts any GameObject a
 "Additional Solutions" are additional codes that will also be accepted, and will unlock all doors. "Additional Door Objects" is a way to provide if you have more than 1 door object, and you want to open them all at the same time.
 
 "Key Separation" is a special mode which requires you to have the same amount of solutions as doors. When enabled it pairs each solution to its own unique door. This means solution 1 will open only door 1, solutions 2 will open only door 2, etc...
+
+If you have any problems, please feel free to reach out on [Discord](https://discord.gg/7xJdWNk)! I would love to help with any _Keypad-related_ problems!
 
 ___
 
