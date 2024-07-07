@@ -1,13 +1,11 @@
 
-___
-
 <h2 align="center">🔒 Keypad Prefab made with Udon for VRChat worlds 🔒</h2>
 
-<img src="https://raw.githubusercontent.com/KitKat4191/UdonKeypad/main/Resources/PhysicalKeypad.png" alt="VRChat Udon Keypad/Passcode" width="400" style="display: block; margin: 0 auto;"/>
+<img src="https://raw.githubusercontent.com/KitKat4191/UdonKeypad/main/Resources/PhysicalKeypad.png" alt="VRChat Udon Keypad/Passcode" width="400"/>
 
 ___
 
-<a href='https://discord.gg/7xJdWNk' target="_blank"><img alt='Discord' src='https://img.shields.io/badge/Keypad_Laboratory-100000?style=flat&logo=Discord&logoColor=FFFFFF&labelColor=5662F6&color=272935' width="400" style="display: block; margin: 0 auto;"/></a>
+<a href='https://discord.gg/7xJdWNk' target="_blank"><img alt='Discord' src='https://img.shields.io/badge/Keypad_Laboratory-100000?style=flat&logo=Discord&logoColor=FFFFFF&labelColor=5662F6&color=272935' width="400"/></a>
 
 ___
 
