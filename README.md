@@ -1,62 +1,76 @@
-# 🔒 **Keypad Prefab made with Udon for VRChat worlds**
 
-![VRChat Udon Keypad/Passcode](https://blog.foorack.com/content/images/2020/01/keypad2.PNG)
+___
 
-Feel free to join the discord if you have any bugs or questions!
-<a href='https://discord.gg/7xJdWNk' target="_blank"><img alt='Discord' src='https://img.shields.io/badge/Keypad_Laboratory-100000?style=flat&logo=Discord&logoColor=FFFFFF&labelColor=5662F6&color=272935'/></a>
+<h2 align="center">🔒 Keypad Prefab made with Udon for VRChat worlds 🔒</h2>
 
-This is a drag-and-drop Keypad/Passcode Prefab for VRChat worlds made in Unity **2019.4.29f** and **SDK3** with **Udon**. This prefab requires no coding from your part and is very easy to setup. Password and target door are both easily configurable, with optional support for custom activation scripts if wanting more advanced activations.
+<img src="https://raw.githubusercontent.com/KitKat4191/UdonKeypad/main/Resources/PhysicalKeypad.png" alt="VRChat Udon Keypad/Passcode" width="400" style="display: block; margin: 0 auto;"/>
+
+___
+
+<a href='https://discord.gg/7xJdWNk' target="_blank"><img alt='Discord' src='https://img.shields.io/badge/Keypad_Laboratory-100000?style=flat&logo=Discord&logoColor=FFFFFF&labelColor=5662F6&color=272935' width="400" style="display: block; margin: 0 auto;"/></a>
+
+___
+
+This is a drag-and-drop Keypad / Passcode Prefab for VRChat worlds made in Unity **2019.4.29f** for **SDK3** with **Udon**. Using this prefab requires no coding from your part and is very easy to setup. Password and target door are both easily configurable. The keypad also has a small API for more advanced users, which can be used alongside custom scripting if more advanced behaviour is desired. The API documentation can be found below.
 
 ___
 
 ## **📥 Download:**
 
-**Note:** In the latest release the Keypad has been rewritten into UdonSharp. Don't worry! You don't have to touch UdonSharp code I promise!
-
-**Install UdonSharp** through the [Creator Companion](https://vcc.docs.vrchat.com/, "https://vcc.docs.vrchat.com/").
-_If you are working with a legacy project, please try [migrating the project](https://vcc.docs.vrchat.com/vpm/migrating/) to the Creator Companion._
-
-After UdonSharp is successfully installed, download [UdonKeypad v.2021.09.16.18.43](https://storage.foorack.com/download.php?id=21&token=ZinqfqvOjuhEqEuTwJU3LCHHf4bRqB3g)
+**Note:** _If you are working with a legacy project, please [migrate the project](https://vcc.docs.vrchat.com/vpm/migrating/) to the Creator Companion._
+Download the Keypad `.unitypackage` from the [latest release](https://github.com/KitKat4191/UdonKeypad/releases/latest).
 
 ___
 
 ## **✨ Setup Tutorial**
 
 **In Unity:** Drag the Keypad prefab into your world.
+The prefab can be found in `Assets\Resources\Foorack\Keypad`.
 
-**Settings:** Look at the settings provided on the **main Keypad object:**
+### Settings
 
-![Settings available in the Keypad prefab](https://blog.foorack.com/content/images/2021/04/bild.png "Settings available in the Keypad prefab")
+This is the `Keypad` script located on the Keypad prefab object.
 
-The main focus is "Door Object" (marked in green) which accepts any GameObject and will toggle active status depending on passcode status, and "Solution" (marked in yellow) which accepts any numeric passcode up to 8 numbers long.
+![Settings available in the Keypad prefab](https://raw.githubusercontent.com/KitKat4191/UdonKeypad/main/Resources/AvailableSettings.png "Settings available in the Keypad prefab")
 
-"Allow List" means the usernames on that list will always be allowed no matter what code they press or no code at all.
+### Settings Documentation
 
-"Additional Solutions" are additional codes that will also be accepted, and will unlock all doors. "Additional Door Objects" is a way to provide if you have more than 1 door object, and you want to open them all at the same time.
+* `Door Object` accepts any _GameObject_. The linked object will be set active or inactive depending on if the entered passcode was right or wrong.
 
-"Key Separation" is a special mode which requires you to have the same amount of solutions as doors. When enabled it pairs each solution to its own unique door. This means solution 1 will open only door 1, solutions 2 will open only door 2, etc...
+* `Solution` is where you specify what the passcode / password will be. It accepts any numeric code up to 8 digits.
 
-If you have any problems, please feel free to reach out on [Discord](https://discord.gg/7xJdWNk)! I would love to help with any _Keypad-related_ problems!
+* `Allow List` is an optional list of usernames that will always be allowed no matter what code they enter.
+
+* `Hide Door On Granted` When the correct passcode is entered it will either hide or show the door object.
+
+* `Disable Debugging` will make the keypad less verbose in the console. Feel free to disable it if you want!
+
+* `Additional Solutions` are additional codes that will also be accepted. By default all the codes will unlock all the doors. If you have more than one door object you can link them in `Additional Door Objects`.
+
+* `Key Separation` is an alternative mode which requires you to have the same amount of solutions as doors. When enabled it pairs each solution to its own unique door. This means solution 1 will only open door 1, solution nr. 2 will open door 2, etc.
+`Solution` pairs with `DoorObject` in this mode.
+
+If you have any problems, please feel free to reach out on [Discord](https://discord.gg/7xJdWNk)! I'm always willing to help with any _Keypad-related_ issues!
 
 ___
 
-## **🖌️ Customisation!**
+## **🖌️ Customization!**
 
-The new version of Keypad supports many customization features. For example translating the Keypad into your own language, by changing the status texts. You can also make the door show the door instead of hiding the door by de-selecting the "Hide Door On Granted" checkbox.
-
-You can disable debugging if you know what you are doing. This will make it less verbose in console, but it is recommended to leave this on. You can also change the values of the buttons to letters, add more buttons, or change the design, they are just Unity cubes...
+This Keypad supports many customization features. For example translating the Keypad into your own language, by changing the status texts. You can also change the values of the buttons to letters, add more buttons (make a whole keyboard if you want!), change the design, etc. they're just Unity cubes after all. People have made some really pretty keypads over the years! You can see pictures of them in the discord server.
 
 ___
 
-## **⚙️ Advanced: Solution Scripting**
+## **⚙️ API Documentation**
 
-This is optional, and only recommended for people who are interested in doing Udon programming. You should at least have watched Tupper's tutorial on cube-rotation before attempting this!
+This is optional, and only recommended for people who are interested in doing Udon programming.
 
-There are 3 possible programs which are run at different stages: at success, at failure, and at reset. Each program calls a custom event. An optional variable `keypadCode` will be set with the entered code on the target program.
+There are three callbacks which are sent via `SendCustomEvent` to the `UdonBehaviour` referenced in the fields `Program Closed`, `Program Denied`, and `Program Granted`. If you wish to listen to all the callbacks on one `UdonBehaviour` you'll need to link it in all three slots.
 
-| Setting name   | Event name      | Description                |
-| -------------- |:---------------:| -------------------------- |
-| programGranted | "keypadGranted" | Runs at successful code    |
+You can optionally declare a string variable named `keypadCode`. This will be set via `SetProgramVariable` and contains the code that was entered by the user.
+
+| UdonBehaviour  |   Event Name    | Description                |
+| -------------- | :-------------: | -------------------------- |
+| programGranted | "keypadGranted" | Runs at correct code       |
 | programDenied  | "keypadDenied"  | Runs at wrong code         |
 | programClosed  | "keypadClosed"  | Runs at pressing Clear/CLR |
 
@@ -64,6 +78,6 @@ ___
 
 ## **💙 Hope you enjoy it!**
 
-You are free to use this prefab without having to credit me. But if you do use it, I would love it if you sent a quick screenshot. It really gives motivation to continuously update and improve this, as well as continue making other stuff public. Thank you!
+Feel free to use this prefab without crediting either me (KitKat) or Foorack (the original creator). But if you do use it, I would love it if you sent a picture of it in use in the discord server! It really gives me motivation to update and improve this prefab, as well as continue making other stuff. Thank you!
 
 <a href='https://discord.gg/7xJdWNk' target="_blank"><img alt='Discord' src='https://img.shields.io/badge/Keypad_Laboratory-100000?style=flat&logo=Discord&logoColor=FFFFFF&labelColor=5662F6&color=272935'/></a>
