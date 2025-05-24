@@ -1,5 +1,6 @@
 
 <div align=center>
+  <img alt="License" src="https://img.shields.io/github/license/KitKat4191/UdonKeypad?color=blue&style=for-the-badge">
   <a href="https://github.com/KitKat4191/UdonKeypad/releases/latest/"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/KitKat4191/UdonKeypad?logo=unity&style=for-the-badge"></a>
   <a href="https://github.com/KitKat4191/UdonKeypad/releases/latest/"><img alt="GitHub all releases" src="https://img.shields.io/github/downloads/KitKat4191/UdonKeypad/total?color=blue&style=for-the-badge"></a>
 </div>
